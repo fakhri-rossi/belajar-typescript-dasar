@@ -23,4 +23,12 @@ describe("Loop", () => {
       counter++;
     }
   });
+
+  it("should support for do while loop in ts", () => {
+    let counter: number = 0;
+    do {
+      console.info(counter);
+      counter++;
+    } while (counter < 10);
+  });
 });
