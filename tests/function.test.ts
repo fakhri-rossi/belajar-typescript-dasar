@@ -58,4 +58,22 @@ describe("Function", function () {
     expect(callMe(10)).toBe(100);
     expect(callMe("Rossi")).toBe("ROSSI");
   });
+
+  it("should support function as parameter", function () {
+    function sayHello(name: string, filter: (name: string) => string): string {
+      return `Hello ${filter(name)}`;
+    }
+
+    function toUpper(name: string): string {
+      return name.toUpperCase();
+    }
+
+    expect(sayHello("rossi", toUpper)).toBe("Hello ROSSI");
+
+    expect(
+      sayHello("andi", (name: string): string => {
+        return name.toUpperCase();
+      })
+    ).toBe("Hello ANDI");
+  });
 });
