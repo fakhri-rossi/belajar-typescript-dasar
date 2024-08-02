@@ -10,4 +10,11 @@ describe("If Statement", function () {
       console.info("Try Again");
     }
   });
+
+  it("should support ternary operator in typescript", function () {
+    const value = 90;
+    const say = value >= 75 ? "Congratss" : "Nice Try";
+
+    console.info(say);
+  });
 });
